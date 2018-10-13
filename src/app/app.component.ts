@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SignupService } from './signup.service'
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +14,7 @@ export class AppComponent {
   constructor(private getSignupData:SignupService){}
   registerUser(form:NgForm){
     this.getSignupData.regUser(form.value).subscribe((status:Object)=>{this.displaySignupData(status)});
+    console.log(status);
     
   }
   displaySignupData(data){
